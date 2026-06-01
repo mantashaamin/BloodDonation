@@ -4,20 +4,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ADD DONOR</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-		<%@ include file="header.jsp" %>
+		
+<%@ include file="header.jsp" %>
 
-<form action="insert.jsp" method="post">
-Name: <input type="text" name="name"><br><br>
-Blood Group: <input type="text" name="blood"><br><br>
-City: <input type="text" name="city"><br><br>
-Contact: <input type="text" name="contact"><br><br>
-Email: <input type="email" name="email"><br><br>
-Disease: <input type="text" name="disease"><br><br>
+<div class="form-container">
 
-<button type="submit">Submit</button>
-</form>
+    <div class="form-card">
+        <h2>Register Donor</h2>
+
+        <form action="insert.jsp" method="post">
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Blood Group:</label>
+            <input type="text" name="blood" required>
+
+            <label>City:</label>
+            <input type="text" name="city" required>
+
+            <label>Contact:</label>
+            <input type="text" name="contact" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <label>Disease:</label>
+            <input type="text" name="disease">
+
+            <button type="submit">Register</button>
+
+        </form>
+
+    </div>
+
+</div>
 </body>
 </html>
