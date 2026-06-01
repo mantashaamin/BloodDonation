@@ -4,14 +4,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>INDEX PAGE</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<%@ include file="header.jsp" %>
+<%@ include file="header.jsp" %>
 
-<h3>Welcome to Blood Donation System</h3>
+<div class="main-container">
 
-<a href="login.jsp">Donor Login</a><br><br>
-<a href="adminLogin.jsp">Admin Login</a>
+    <!-- LEFT -->
+    <div class="left-box">
+        <img src="b.jpeg" class="hero-img">
+
+        <div class="content">
+            <h1>Make a Difference.<br>Become a Donor Today.</h1>
+
+            <p>
+                Join our mission to help save lives through blood donation.
+                Your contribution can make a real impact.
+            </p>
+
+            <div class="btn-group">
+                <a href="login.jsp" class="btn">Donor Login</a>
+                <a href="addDonor.jsp" class="btn">Register Donor</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-box">
+        <img src="logo.png" class="admin-img">
+
+        <h2>System Administration</h2>
+
+        <a href="adminLogin.jsp" class="btn admin-btn">Admin Login</a>
+    </div>
+
+</div>
+
 </body>
 </html>
