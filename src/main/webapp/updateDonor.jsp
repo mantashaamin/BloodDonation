@@ -9,6 +9,7 @@
 </head>
 <body>
 		<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*" %>
 
 <%
 String id = request.getParameter("id");
@@ -26,7 +27,7 @@ Connection con = DriverManager.getConnection(
 ""
 );
 
-String qry = "update donors set name=?,blood=?,city=?,contact=? where id=?";
+String qry = "update donors set name=?, blood=?, city=?, contact=? where id=?";
 PreparedStatement ps = con.prepareStatement(qry);
 
 ps.setString(1,name);
@@ -38,12 +39,10 @@ ps.setInt(5,Integer.parseInt(id));
 int row = ps.executeUpdate();
 
 if(row>0){
-    out.println("Updated Successfully");
+    response.sendRedirect("viewAllDonor.jsp");
 }
 
 }catch(Exception e){
 out.println(e);
 }
 %>
-</body>
-</html>
