@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>VIEW DONOR</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 		
@@ -23,8 +24,11 @@ try{
     
 
     Class.forName("org.postgresql.Driver");
-	Connection con = DriverManager.getConnection("jdbc:postgresql://192.168.1.17:5432/cse_db24", "24bcsi38", "24bcsi38");
-    
+    Connection con = DriverManager.getConnection(
+    		 "jdbc:postgresql://localhost:5432/mantashaparween",
+    		 "mantashaparween",
+    		 ""
+    		);
 
     Statement stmt = con.createStatement();
     ResultSet rs = stmt.executeQuery("select * from donors");
@@ -41,6 +45,7 @@ try{
 <td><%= rs.getString(7) %></td>
 <td>
 <a href="deleteDonor.jsp?id=<%=rs.getInt(1)%>">Delete</a>
+<a href="editDonor.jsp?id=<%=rs.getInt(1)%>">Edit</a>
 </td>
 </tr>
 <%
