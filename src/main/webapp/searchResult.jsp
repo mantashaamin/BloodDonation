@@ -9,11 +9,15 @@
 </head>
 <body>
 		<%@ page import="java.sql.*" %>
+<body>
+<%@ page import="java.sql.*" %>
 <%@ include file="header.jsp" %>
 
-<h3>Search Results</h3>
+<div align="center">
 
-<table>
+<h2>Search Results</h2>
+
+<table class="donor-table">
 <tr>
 <th>ID</th><th>Name</th><th>Blood</th><th>City</th><th>Contact</th>
 <th>Email</th><th>Disease</th>
@@ -22,6 +26,8 @@
 <%
 String blood = request.getParameter("blood");
 String city = request.getParameter("city");
+
+boolean found = false;
 
 try{
     Class.forName("org.postgresql.Driver");
@@ -41,6 +47,7 @@ try{
     ResultSet rs = ps.executeQuery();
 
     while(rs.next()){
+        found = true;
 %>
 <tr>
 <td><%= rs.getInt(1) %></td>
@@ -53,11 +60,23 @@ try{
 </tr>
 <%
     }
+
 }catch(Exception e){
     out.println(e);
 }
 %>
 
 </table>
+
+<%
+if(!found){
+%>
+<p style="color:red; font-weight:bold;">No donor found</p>
+<%
+}
+%>
+
+</div>
+
 </body>
 </html>
