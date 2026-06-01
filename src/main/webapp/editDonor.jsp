@@ -15,15 +15,33 @@
 String id = request.getParameter("id");
 %>
 
-<form action="updateDonor.jsp" method="post">
-<input type="hidden" name="id" value="<%=id%>">
+<div style="text-align:center; margin-top:50px;">
 
-Name: <input type="text" name="name"><br><br>
-Blood: <input type="text" name="blood"><br><br>
-City: <input type="text" name="city"><br><br>
-Contact: <input type="text" name="contact"><br><br>
+    <div style="display:inline-block; padding:20px; border:1px solid #ccc; border-radius:10px;">
 
-<button type="submit">Update</button>
-</form>
+        <form action="updateDonor.jsp" method="post">
+
+            <input type="hidden" name="id" value="<%=id%>">
+
+            Name: <br>
+            <input type="text" name="name"><br><br>
+
+            Blood: <br>
+            <input type="text" name="blood"><br><br>
+
+            City: <br>
+            <input type="text" name="city"><br><br>
+
+            Contact: <br>
+            <input type="text" name="contact"><br><br>
+
+            <button type="submit">Update</button>
+
+        </form>
+
+    </div>
+
+</div>
+
 </body>
 </html>
